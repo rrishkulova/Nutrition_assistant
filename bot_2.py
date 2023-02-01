@@ -6,7 +6,8 @@ import os
 import torch
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
-from paddleocr import PaddleOCR, draw_ocr
+from paddleocr import PaddleOCR
+import shutil
 
 # Поиск областей с текстом на изображениях с помощью EasyOCR и Paddle
 # Функция для поиска координат слов и отрисовке боксов на картинке
@@ -79,19 +80,27 @@ def get_img(ocr:str, photo_name):
   globals()['list_%s' % ocr] = sorted(os.listdir(path), key=lambda x: int(x.split('_')[0]))
   globals()['path_%s' % ocr] = path
 
-
   # Запускает предыдущие функции
 def main(paths:list):
-  # os.removedirs('easyocr_results')
-  # os.removedirs('paddleocr_results')
+  try:
+    shutil.rmtree('easyocr_results')
+    os.mkdir('easyocr_results')
+    os.mkdir('easyocr_results/image_detection')
+    os.mkdir('easyocr_results/detected_words')   
+  except:
+    os.mkdir('easyocr_results')
+    os.mkdir('easyocr_results/image_detection')
+    os.mkdir('easyocr_results/detected_words')
 
-  # os.mkdir('easyocr_results')
-  # os.mkdir('easyocr_results/image_detection')
-  # os.mkdir('easyocr_results/detected_words')
-
-  # os.mkdir('paddleocr_results')
-  # os.mkdir('paddleocr_results/image_detection')
-  # os.mkdir('paddleocr_results/detected_words')
+  try:
+    shutil.rmtree('paddleocr_results')
+    os.mkdir('paddleocr_results')
+    os.mkdir('paddleocr_results/image_detection')
+    os.mkdir('paddleocr_results/detected_words')
+  except:
+    os.mkdir('paddleocr_results')
+    os.mkdir('paddleocr_results/image_detection')
+    os.mkdir('paddleocr_results/detected_words')
 
   photo_name = get_detected_words_easyocr(paths, 'easyocr')
   photo_name = get_detected_words_easyocr(paths, 'paddleocr')
@@ -101,12 +110,10 @@ def main(paths:list):
 
   return list_easyocr, path_easyocr, list_paddleocr, path_paddleocr
 
-# main(['/home/rushana/Финальный_проект/lecho_C.jpg'])
-
 # Распознавание текста на выделенных областях
 def text_recognition(list_easyocr, path_easyocr, list_paddleocr, path_paddleocr):
   
-  ocr = PaddleOCR(rec_model_dir='./', rec_char_dict_path='./rus_chars.txt')
+  ocr = PaddleOCR(rec_model_dir='/home/rushana/Final_project/CVTR_Tiny_inference', rec_char_dict_path='/home/rushana/Final_project/rus_chars.txt')
 
   result_easyocr = []
   result_paddleocr = []
@@ -132,38 +139,39 @@ def text_recognition(list_easyocr, path_easyocr, list_paddleocr, path_paddleocr)
   return svtr_result
 
 # Исправление распознанных слов с помощью FuzzyWuzzy
-def fuzzywuzzy(found_words: list):
+# функция для определения является ли распознанное слово числом
+def is_number(str):
+    try:
+      float(str)
+      return True
+    except:
+      return False
+
+def run_fuzzywuzzy(found_words: list):
+  correct_words = open("correct_words.txt", "r").readlines()
   final_list = []
-  correct_words = ['глюкоза', 'декстроза', 'е102', 'е103', 'е105', 'е110', 'е1105', 'е121', 'е123', 'е125', 'е126', 'е128', 'е130', 'е131', 
-                 'е142', 'е151', 'е152', 'е153', 'е154', 'е160', 'е210', 'е211', 'е212', 'е213', 'е214', 'е215', 'е216', 'е216', 'е217', 
-                 'е217', 'е219', 'е220', 'е221', 'е222', 'е223', 'е224', 'е225', 'е226', 'е230', 'е230', 'е230', 'е231', 'е231', 'е232', 
-                 'е232', 'е233', 'е239', 'е239', 'е240', 'е249', 'е252', 'е280', 'е281', 'е282', 'е283', 'е311', 'е312', 'е313', 'е320', 
-                 'е320', 'е321', 'е321', 'е322', 'е330', 'е338', 'е339', 'е340', 'е341', 'е343', 'е405', 'е407', 'е447', 'е450', 'е451', 
-                 'е452', 'е453', 'е454', 'е461', 'е462', 'е463', 'е464', 'е465', 'е466', 'е626', 'е627', 'е628', 'е629', 'е630', 'е631', 
-                 'е632', 'е633', 'е634', 'е635', 'е951', 'е954', 'ксилит', 'кукурузный сироп', 'мальтоза', 'меласса', 'нектар агавы', 
-                 'пальмовое масло', 'патока', 'сахароза', 'сироп топинамбура', 'сорбит', 'сукралоза', 'тростниковый сок', 'фруктоза', 
-                 'сахар', 'состав', 'пищевая', "ценность", "молоко", "наполнитель", "смородина", "ягода", "сок", "концентрированный", 
-                 "закваска", "углеводы", "жиры", "белки", "срок", "годности", "вода", "питьевая", "сироп", "топинамбура"]
   for word in found_words:
-    high_score = 50
-    best_word = ''
-    for cor_word in correct_words:
-      result = fuzz.token_sort_ratio(word, cor_word)
-      # print(f'{word} - {cor_word}: {result}')
-      if result > high_score:
-        high_score = result
-        best_word = cor_word
-      pass
-    if best_word != '':
-      if best_word not in final_list:
-        final_list.append(best_word)
+    if is_number(word) == False:
+      high_score = 50
+      best_word = ''
+      for cor_word in correct_words:
+        result = fuzz.token_sort_ratio(word, cor_word[:-1])
+        if result > high_score:
+          high_score = result
+          best_word = cor_word[:-1]
+        pass
+      if best_word != '':
+        if best_word not in final_list:
+          final_list.append(best_word)
   return final_list
 
 #Распознавание текста на изображении
 def image_to_text(paths:list):
   main(paths)
   found_words = text_recognition(list_easyocr, path_easyocr, list_paddleocr, path_paddleocr)
-  final_list = fuzzywuzzy(found_words)
+  final_list = run_fuzzywuzzy(found_words)
   print(final_list)
 
-image_to_text('./111.jpg')
+# image_to_text(['/home/rushana/Final_project/lecho_C.jpg'])
+
+image_to_text(['111.jpg'])
