@@ -14,8 +14,8 @@ import numpy as np
 import json
 import re
 
-# from config import TOKEN  #получаем токен из соседнего файла в папке при запуске в IDE
-TOKEN = "5795434284:AAHSjczTFwOo6LQi6KilahBPGdZ9tIQavpE"
+from config import TOKEN  #получаем токен из соседнего файла в папке при запуске в IDE
+
 
 logging.basicConfig(level=logging.INFO)
 
