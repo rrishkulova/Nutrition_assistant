@@ -9,7 +9,7 @@
 
 Telegram-бот для распознавания входящих в продукт ингредиентов по фотографии состава с целью обнаружения нежелательных добавок*. Пользователь может составить собственный стоп-лист для контроля употребления определенных ингредиентов, например, по причине аллергии или соблюдения диеты. Бот проверит не только добавленный ингредиент, но и его производные ("арахис" -> "арахисовый").   
 
-Над проектом работали: [@Rushaniia Ishkulova](https://github.com/rrishkulova), [@Tatiana Maslennikova](https://github.com/Tanchik24), [@Alexandr Kozhevnikov](https://github.com/Sand478).
+Над проектом работали: [@Rushaniia Ishkulova](https://github.com/rrishkulova), [@Tatiana Maslennikova](https://github.com/Tanchik24), [@Alexandr Kozhevnikov](https://github.com/Sand478). <p><a href="https://youtu.be/EjCPQiNYnJo"><img src="images/YT_logo.png" alt=""></a></p>
 
 *\*Перечень нежелательных пищевых добавок Е составлен по материалам Центра независимой экологической экспертизы "КЕДР", а также по данным INFO Минздрав.*
 
@@ -17,9 +17,8 @@ Telegram-бот для распознавания входящих в проду
 <img src="images/gif.gif" alt="bash"/>
 </p>   
 
-**Ссылка на видео:**   
 
-<p><a href="https://youtu.be/EjCPQiNYnJo"><img src="images/YT_logo.png" alt=""></a></p>
+
 
 Используемые библиотеки: *BeautifulSoup, SynthTest, PaddleOCR, FuzzyWuzzy, Aiogram.*
 
