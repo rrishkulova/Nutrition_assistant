@@ -1,4 +1,4 @@
-**Nutrition Assistant**
+<p class="center">Nutrition Assistant</p>
 <p align="center" >   
 <img src="gif.gif" alt="bash"/>
 </p>
