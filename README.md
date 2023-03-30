@@ -1,5 +1,9 @@
 <h1 align="center">Nutrition Assistant</a></h1>
 
+<p align="center" >   
+<img src="logo.jpg" alt="bash"/>
+</p>
+
 Проверяет состав продукта, помогая следить за качеством питания и облегчая процесс соблюдения диеты.   
 
 <p align="center" >   
