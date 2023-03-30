@@ -19,9 +19,5 @@ Telegram-бот для распознавания входящих в проду
 
 <p><a href="https://youtu.be/EjCPQiNYnJo"><img src="images/youtube_logo.png" alt=""></a></p>
 
-<p align="center" >   
-<img src="video.gif" alt="bash"/>
-</p>
-
 Используемые библиотеки: *BeautifulSoup, SynthTest, PaddleOCR, FuzzyWuzzy, Aiogram.*
 
