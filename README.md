@@ -1,4 +1,4 @@
-<p class="center">Nutrition Assistant</p>
+<h1 align="center">Nutrition Assistant target="_blank"></a> 
 <p align="center" >   
 <img src="gif.gif" alt="bash"/>
 </p>
