@@ -9,7 +9,9 @@ Telegram-бот для распознавания входящих в проду
 
 *Перечень нежелательных пищевых добавок Е составлен по материалам Центра независимой экологической экспертизы "КЕДР", а также по данным INFO Минздрав.
 
-![](https://github.com/rrishkulova/nutritional_assistant/blob/main/video.gif)
+<p align="center" >   
+<img src="video.gif" alt="bash"/>
+</p>
 
-Используемые библиотеки: *BeautifulSoup, SynthTest, PaddleOCR, FuzzyWuzzy, Aiogram.*ыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыыы
+Используемые библиотеки: *BeautifulSoup, SynthTest, PaddleOCR, FuzzyWuzzy, Aiogram.*
 
