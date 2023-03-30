@@ -11,7 +11,7 @@ Telegram-бот для распознавания входящих в проду
 
 Над проектом работали: [@Rushaniia Ishkulova](https://github.com/rrishkulova), [@Tatiana Maslennikova](https://github.com/Tanchik24), [@Alexandr Kozhevnikov](https://github.com/Sand478).
 
-*Перечень нежелательных пищевых добавок Е составлен по материалам Центра независимой экологической экспертизы "КЕДР", а также по данным INFO Минздрав.
+*\*Перечень нежелательных пищевых добавок Е составлен по материалам Центра независимой экологической экспертизы "КЕДР", а также по данным INFO Минздрав.*
 
 <p align="center" >   
 <img src="gif1.gif" alt="bash"/>
