@@ -17,7 +17,7 @@ Telegram-бот для распознавания входящих в проду
 <img src="images/gif.gif" alt="bash"/>
 </p>
 
-<a href="[https://webref.ru](https://youtu.be/EjCPQiNYnJo)"><img src="images/youtube.png" alt=""></a>
+<p><a href="[https://webref.ru](https://youtu.be/EjCPQiNYnJo)"><img src="images/youtube.png" alt=""></a></p>
 
 <p align="center" >   
 <img src="video.gif" alt="bash"/>
