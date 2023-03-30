@@ -17,19 +17,7 @@ Telegram-бот для распознавания входящих в проду
 <img src="images/gif.gif" alt="bash"/>
 </p>
 
-<!--  </head>
- <body>
-  <p>
-   <a href="page/help.html"><img src="image/panda.png" alt="Панда"></a>
-   <a href="page/help.html"><img src="image/fox.png" alt="Лиса"></a>
-  </p>
- </body>
-</html>
- -->
-
-
-
-<p><a href="https://youtu.be/EjCPQiNYnJo"><img src="images/youtube.png" alt=""></a></p>
+<p><a href="https://youtu.be/EjCPQiNYnJo"><img src="images/youtube_logo.png" alt=""></a></p>
 
 <p align="center" >   
 <img src="video.gif" alt="bash"/>
