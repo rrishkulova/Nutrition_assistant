@@ -15,9 +15,8 @@ import json
 import re
 from nltk.stem.snowball import RussianStemmer
 
-# from config import TOKEN  #получаем токен из соседнего файла в папке при запуске в IDE
+from config import TOKEN  #получаем токен из соседнего файла в папке при запуске в IDE
 
-TOKEN = '6185293322:AAGi4D_z7ztkscJj0eMzO2t6VyNDTQcXbFQ'
 logging.basicConfig(level=logging.INFO)
 
 bot = Bot(token=TOKEN)
