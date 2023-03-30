@@ -1,6 +1,5 @@
-<p align="center" >
-<b>Nutrition Assistant</b>        
-
+**Nutrition Assistant**
+<p align="center" >   
 <img src="gif.gif" alt="bash"/>
 </p>
 
