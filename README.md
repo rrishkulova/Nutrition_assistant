@@ -19,7 +19,7 @@ Telegram-бот для распознавания входящих в проду
 
 **Ссылка на видео:**   
 
-<p><a href="https://youtu.be/EjCPQiNYnJo"><img src="images/youtube_logo.png" alt=""></a></p>
+<p><a href="https://youtu.be/EjCPQiNYnJo"><img src="images/YT_logo.png" alt=""></a></p>
 
 Используемые библиотеки: *BeautifulSoup, SynthTest, PaddleOCR, FuzzyWuzzy, Aiogram.*
 
