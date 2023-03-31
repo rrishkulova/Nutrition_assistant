@@ -27,9 +27,10 @@ Telegram-бот для распознавания входящих в проду
 <img src="images/libraries.png" alt="bash"/>
 </p>   
 
+- Ход реализации проекта
   * Парсинг составов продуктов с сайта магазина "Перекресток" с помощью библиотеки [BeautifulSoup](https://github.com/rrishkulova/Nutrition_assistant/tree/main/0.Parsing). 
   * Предобработка спарсенных данных для дальнейшего создания словаря, на основании которого генерировался текст в синтетическом датасете, а также позже осуществлялась корректировка распознанных слов.    
-- Создание синтетического датасета для обучения модели детекции при помощи [SynthText](https://github.com/rrishkulova/Nutrition_assistant/tree/main/1.SynthText).   
-- Дообучение модели распознавания [PaddleOCR](https://github.com/rrishkulova/Nutrition_assistant/tree/main/2.PaddleOCR) на сгенерированном русскоязычном датасете.   
-- Для того, чтобы в дальнейшем распознанные слова можно было сравнить с личным стоп-листом пользователя и списком нежелательных пищевых добавок, воспользовались библиотекой нечеткого сравнения слов **FuzzyWuzzy**.    
-- Через библиотеку [aiogram](https://github.com/rrishkulova/Nutrition_assistant/tree/main/3.Bot) создали Telegram Bot.
+ * Создание синтетического датасета для обучения модели детекции при помощи [SynthText](https://github.com/rrishkulova/Nutrition_assistant/tree/main/1.SynthText).   
+ * Дообучение модели распознавания [PaddleOCR](https://github.com/rrishkulova/Nutrition_assistant/tree/main/2.PaddleOCR) на сгенерированном русскоязычном датасете.   
+ * Для того, чтобы в дальнейшем распознанные слова можно было сравнить с личным стоп-листом пользователя и списком нежелательных пищевых добавок, воспользовались библиотекой нечеткого сравнения слов **FuzzyWuzzy**.    
+ * Через библиотеку [aiogram](https://github.com/rrishkulova/Nutrition_assistant/tree/main/3.Bot) создали Telegram Bot.
