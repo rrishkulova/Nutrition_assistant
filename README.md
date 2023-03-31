@@ -27,6 +27,8 @@ Telegram-бот для распознавания входящих в проду
 <img src="images/libraries.png" alt="bash"/>
 </p>   
 
+<h1 align="left">Стек и ход реализации проекта</a></h1>
+
 - Парсинг составов продуктов с сайта магазина "Перекресток" с помощью библиотеки [BeautifulSoup](https://github.com/rrishkulova/Nutrition_assistant/tree/main/0.Parsing). 
 - Предобработка спарсенных данных для дальнейшего создания словаря, на основании которого генерировался текст в синтетическом датасете, а также позже осуществлялась корректировка распознанных слов.    
 - Создание синтетического датасета для обучения модели детекции при помощи [SynthText](https://github.com/rrishkulova/Nutrition_assistant/tree/main/1.SynthText).   
